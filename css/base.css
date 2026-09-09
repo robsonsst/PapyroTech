@@ -1,0 +1,137 @@
+/* ========================================= */
+/* --- RESET E VARIÁVEIS GLOBAIS ----------- */
+/* ========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+:root {
+  --primary-blue: #38bdf8;
+  --hover-blue: #0ea5e9;
+  --dark-bg: #030712;
+  --text-white: #ffffff;
+  --divider-gray: #374151;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--dark-bg);
+}
+
+.container-principal {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark-bg);
+}
+
+/* ========================================= */
+/* --- NAVBAR ------------------------------ */
+/* ========================================= */
+
+.navbar {
+  height: 65px;
+  background-color: #0c0f18;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  border-bottom: 1px solid var(--divider-gray);
+  color: var(--text-white);
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.nav-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: var(--text-white);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-blue);
+}
+
+.nav-user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-ceep-imagem-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-username {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* ========================================= */
+/* --- FOOTER ------------------------------ */
+/* ========================================= */
+
+.footer {
+  height: 55px;
+  background-color: #0c0f18;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  border-top: 1px solid var(--divider-gray);
+  color: var(--text-white);
+  margin-top: auto;
+}
+
+.footer-links a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-icon-button {
+  background: transparent;
+  border: none;
+  color: var(--divider-gray);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-icon-button:hover {
+  color: var(--primary-blue);
+}

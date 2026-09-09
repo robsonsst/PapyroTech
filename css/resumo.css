@@ -1,0 +1,147 @@
+.results-section {
+  flex: 1;
+  width: 100%;
+  background: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.results-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.results-container {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  height: 85%;
+  gap: 25px;
+}
+
+.single-content-container {
+  max-width: 900px;
+}
+
+.results-content {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: auto;
+}
+
+.full-width-content {
+  width: 100%;
+}
+
+.results-title {
+  font-size: 2.2rem;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.book-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 18px 25px;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.book-card-detailed {
+  align-items: stretch;
+}
+
+.book-cover img {
+  width: 80px;
+  height: 115px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.book-info {
+  flex: 1;
+  color: #222;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.book-info-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.book-synopsis {
+  margin-top: 8px;
+  padding-top: 8px;
+  font-size: 0.85rem;
+  color: #333;
+  line-height: 1.45;
+}
+
+.book-location {
+  margin-top: 6px;
+}
+
+.book-action-top {
+  display: flex;
+  align-self: flex-start;
+}
+
+.btn-solicitar {
+  background-color: var(--primary-blue);
+  color: white;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+}
+
+.btn-solicitar:hover {
+  background-color: var(--hover-blue);
+}
+
+.confirm-container {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 15px;
+}
+
+.btn-confirmar {
+  background-color: var(--primary-blue);
+  color: white;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.btn-confirmar:hover {
+  background-color: var(--hover-blue);
+}
