@@ -16,7 +16,7 @@
         <div class="nav-left">
           <div class="nav-brand">
             <div class="nav-logo-imagem-container">
-              <img src="caminho-para-sua-logo-mini.png" alt="Logo PapyroTech Mini" class="nav-logo-img" />
+              <img src="logos/LOGO2.png" width="50" height="50" alt="Logo PapyroTech Mini" class="nav-logo-img" />
             </div>
             <div class="nav-title">PapyroTech</div>
           </div>
@@ -31,9 +31,9 @@
         <div class="nav-right">
           <div class="nav-user-info">
             <div class="nav-ceep-imagem-container">
-              <img src="logos/logoceep3.png" alt="Logo CEEP" class="nav-ceep-img" />
+              <img src="logos/logoceep3.png" width="55" height="55" alt="Logo CEEP" class="nav-ceep-img" />
             </div>
-            <span class="nav-username">NOME DO USUÁRIO</span>
+            <span class="nav-username">CEEP REGIS PACHECO</span>
           </div>
         </div>
       </nav>
@@ -42,16 +42,15 @@
         <div class="search-overlay">
           <div class="search-content">
             <div class="search-bar">
-              <input type="text" id="input-busca" placeholder="Digite aqui o nome do livro, autor ou gênero" />
-              <div class="search-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-              </div>
-            </div>
-            <a href="resultados.html" class="search-button">Buscar</a>
-          </div>
+            <div class="search-bar">
+    <form action="resultados.html" method="GET" onsubmit="return validarBusca(event)">
+    <input type="text" id="input-busca" name="q" placeholder="Digite o nome do livro, autor ou gênero...">
+  
+       
+    <!-- O botão azul agora faz o envio do formulário -->
+    <button type="submit" class="search-button">Buscar</button>
+  </form>
+</div>
         </div>
       </main>
 
@@ -68,5 +67,22 @@
         </a>
       </footer>
     </div>
+<script>      
+function validarBusca(event) {
+  const inputBusca = document.getElementById('input-busca');
+  const valor = inputBusca.value.trim();
+
+  if (valor === '') {
+    if (event) event.preventDefault();
+    alert('Por favor, digite o nome do livro, autor ou gênero para continuar.');
+    inputBusca.focus();
+    return false;
+  }
+
+  // Se houver texto, o formulário envia automaticamente para resultados.html
+  return true;
+}
+</script>
+
   </body>
 </html>
