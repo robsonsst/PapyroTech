@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PapyroTech - Catálogos</title>
+    <link rel="stylesheet" href="css/catalogo.css">
+</head>
+<body>
+
+    <!-- Cabeçalho (Navbar) -->
+    <header class="navbar">
+        <div class="logo-catalogo">
+          <div class="nav-ceep-imagem-container">
+            <img src="logos/logoceep3.png" width="55" height="55" alt="Logo CEEP" class="nav-ceep-img" />
+          </div>
+            <div class="nav-title">PapyroTech</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="busca.html">Início</a></li>
+                <li><a href="catalogo.html" class="active">Catálogos</a></li>
+                <li><a href="#">Sobre nós</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Principal com Fundo da Biblioteca -->
+    <main class="hero-section">
+        <div class="overlay"></div>
+
+        <!-- Barra de Pesquisa Centralizada -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Digite o nome do livro, autor ou gênero">
+            <button class="btn-buscar">Buscar</button>
+        </div>
+
+        <!-- Grade do Catálogo de Livros -->
+        <section class="catalog-container">
+            <h2>Nosso Acervo</h2>
+            <div class="books-grid">
+
+                <!-- Card de Livro 1 -->
+                <div class="book-card" onclick="openModal('Dom Casmurro', 'Machado de Assis', 'Romance / Literatura Brasileira', 'Disponível', 'Uma das obras-primas de Machado de Assis que narra a história de Bentinho e Capitu.', 'https://via.placeholder.com/150x220?text=Dom+Casmurro')">
+                    <img src="https://via.placeholder.com/150x220?text=Dom+Casmurro" alt="Dom Casmurro">
+                    <h3>Dom Casmurro</h3>
+                    <p>Machado de Assis</p>
+                    <span class="badge available">Disponível</span>
+                </div>
+
+                <!-- Card de Livro 2 -->
+                <div class="book-card" onclick="openModal('1984', 'George Orwell', 'Ficção Científica / Distopia', 'Indisponível', 'Um clássico moderno sobre um regime totalitário que vigia todos os passos da sociedade.', 'https://via.placeholder.com/150x220?text=1984')">
+                    <img src="https://via.placeholder.com/150x220?text=1984" alt="1984">
+                    <h3>1984</h3>
+                    <p>George Orwell</p>
+                    <span class="badge unavailable">Indisponível</span>
+                </div>
+
+                <!-- Card de Livro 3 -->
+                <div class="book-card" onclick="openModal('O Hobbit', 'J.R.R. Tolkien', 'Fantasia', 'Disponível', 'A aventura de Bilbo Bolseiro junto aos anões e Gandalf em busca do tesouro guardado por Smaug.', 'https://via.placeholder.com/150x220?text=O+Hobbit')">
+                    <img src="https://via.placeholder.com/150x220?text=O+Hobbit" alt="O Hobbit">
+                    <h3>O Hobbit</h3>
+                    <p>J.R.R. Tolkien</p>
+                    <span class="badge available">Disponível</span>
+                </div>
+
+                <!-- Adicione mais cards de livros conforme necessário -->
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Informações do Livro (Tela que aparece ao clicar) -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <img id="modalCover" src="" alt="Capa do Livro">
+                <div class="modal-details">
+                    <h2 id="modalTitle">Título do Livro</h2>
+                    <p class="modal-author"><strong>Autor:</strong> <span id="modalAuthor"></span></p>
+                    <p class="modal-genre"><strong>Gênero:</strong> <span id="modalGenre"></span></p>
+                    <p class="modal-desc" id="modalDescription"></p>
+                    <div class="modal-status">
+                        <strong>Disponibilidade:</strong> <span id="modalStatus" class="badge"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para controlar a abertura/fechamento do Modal -->
+    <script>
+        function openModal(title, author, genre, status, description, coverUrl) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalAuthor').innerText = author;
+            document.getElementById('modalGenre').innerText = genre;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('modalCover').src = coverUrl;
+
+            const statusElement = document.getElementById('modalStatus');
+            statusElement.innerText = status;
+            
+            if (status === 'Disponível') {
+                statusElement.className = 'badge available';
+            } else {
+                statusElement.className = 'badge unavailable';
+            }
+
+            document.getElementById('bookModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('bookModal').style.display = 'none';
+        }
+
+        // Fechar o modal ao clicar fora dele
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
